@@ -126,7 +126,7 @@ super + {Left,Down,Up,Right}
 #
 #Terminal
 ctrl + space + t
-	xterm
+	kitty
 
 #Firefox
 ctrl + space + f
