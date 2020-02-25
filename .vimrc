@@ -18,3 +18,6 @@ nnoremap <Leader>htc :GhcModTypeClear<cr>
 autocmd FileType haskell nnoremap <buffer> <leader>? :call ale#cursor#ShowCursorDetail()<cr>
 
 syntax on
+
+:set number relativenumber
+
