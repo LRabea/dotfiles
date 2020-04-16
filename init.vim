@@ -100,3 +100,6 @@ let g:mkdp_refresh_slow = 0
 let g:mkdp_browser = 'firefox'
 
 "Haskell -------------------------------------------------------------------
+let g:LanguageClient_serverCommands = {'haskell': [hie-wrapper], '--lsp'}
+syntax on
+filetype plugin indent on
