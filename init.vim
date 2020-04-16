@@ -1,6 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins' }
+" Various Plug Ins ---------------------------------------------------------
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
@@ -10,26 +10,47 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+" Markdown ----------------------------------------------------------------
 Plug 'godlygeek/tabular'
 Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'iamcco/markdown-preview.nvim', {'do': {-> mkdp#util#install()}}
+"Hasell -------------------------------------------------------------------
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
+Plug 'alx741/vim-stylishask'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \}
 
 call plug#end() 
 
 "General Settings ---------------------------------------------------------
 syntax on
 set number
-
-"deoplete settings --------------------------------------------------------
-let g:deoplete#enable_at_startup = 1
-autocmd InsertLeave, CompleteDone * if pumvisible() == 0 | pclose | endif
-set splitbelow
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+set showmode
+set smartcase
+set smarttab
+set smartindent
+set autoindent
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set background=dark
+set laststatus=0
 
 "vim-airline --------------------------------------------------------------
 let g:airline_theme='angr'
+
+" Nerdcommenter -----------------------------------------------------------
+let g:NERDSpaceDeLims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
 
 "Neoformat ----------------------------------------------------------------
 "Enable alignment
@@ -77,3 +98,5 @@ let g:mkdp_auto_start = 1
 let g:mkdp_auto_close = 1
 let g:mkdp_refresh_slow = 0
 let g:mkdp_browser = 'firefox'
+
+"Haskell -------------------------------------------------------------------
