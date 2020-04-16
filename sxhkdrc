@@ -129,8 +129,8 @@ ctrl + space + t
 	kitty
 
 #Firefox
-ctrl + space + f
-	firefox-nightly
+#ctrl + space + f
+#	firefox-nightly
 
 # Demnu
 super + space
