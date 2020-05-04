@@ -10,21 +10,27 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'dylanaraps/wal'
 " Markdown ----------------------------------------------------------------
 Plug 'godlygeek/tabular'
 Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'iamcco/markdown-preview.nvim', {'do': {-> mkdp#util#install()}}
+"LaTeX --------------------------------------------------------------------
+Plug 'lervag/vimtex'
+Plug 'KeitaNakamura/tex-conceal.vim'
+Plug 'donRaphaco/neotex', { 'for': 'tex' }
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 "Hasell -------------------------------------------------------------------
 Plug 'neoclide/coc.nvim', {'branch' : 'release'}
-Plug 'neovimhaskell/haskell-vim'
-Plug 'alx741/vim-hindent'
-Plug 'alx741/vim-stylishask'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \}
+"Plug 'neovimhaskell/haskell-vim'
+"Plug 'alx741/vim-hindent'
+"Plug 'alx741/vim-stylishask'
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"   \}
 
 call plug#end() 
 
@@ -41,6 +47,7 @@ set shiftwidth=2
 set softtabstop=2
 set background=dark
 set laststatus=0
+colorscheme wal
 
 "vim-airline --------------------------------------------------------------
 let g:airline_theme='angr'
@@ -61,7 +68,7 @@ let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
 
 "Ultisnips ----------------------------------------------------------------
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
@@ -83,7 +90,7 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_json_frontmatter = 1
 
-"vim-pancoc-syntax
+"vim-pandoc-syntax
 augroup pandoc_syntax
 	au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 augroup END	
@@ -99,4 +106,14 @@ let g:mkdp_auto_close = 1
 let g:mkdp_refresh_slow = 0
 let g:mkdp_browser = 'firefox'
 
+"LaTeX --------------------------------------------------------------------
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:livepreview_previewer='open -a zathura'
+let g:livepreview_engine='pdflatex'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+let g:neotex_enabled=2
+autocmd Filetype tex setl updatetime=1
 "Haskell -------------------------------------------------------------------
