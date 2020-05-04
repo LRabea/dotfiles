@@ -117,3 +117,6 @@ let g:tex_conceal='abdmg'
 let g:neotex_enabled=2
 autocmd Filetype tex setl updatetime=1
 "Haskell -------------------------------------------------------------------
+let g:LanguageClient_serverCommands = {'haskell': [hie-wrapper], '--lsp'}
+syntax on
+filetype plugin indent on
